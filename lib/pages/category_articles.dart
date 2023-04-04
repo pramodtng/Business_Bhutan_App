@@ -41,8 +41,8 @@ class _CategoryArticlesState extends State<CategoryArticles> {
 
   Future<List<dynamic>> fetchCategoryArticles(int page) async {
     try {
-      var response = await http.get(
-          Uri.parse("$WORDPRESS_URL/wp-json/wp/v2/posts?categories[]=" +
+      var response = await http.get(Uri.parse(
+          "$WORDPRESS_URL/wp-json/wp/v2/posts?categories[]=" +
               widget.id.toString() +
               "&page=$page&per_page=10&_fields=id,date,title,content,custom,link"));
 
@@ -108,8 +108,9 @@ class _CategoryArticlesState extends State<CategoryArticles> {
         child: SingleChildScrollView(
             controller: _controller,
             scrollDirection: Axis.vertical,
-            child: Column(
-                children: <Widget>[categoryPosts(_futureCategoryArticles as Future<List<dynamic>>)])),
+            child: Column(children: <Widget>[
+              categoryPosts(_futureCategoryArticles as Future<List<dynamic>>)
+            ])),
       ),
     );
   }
@@ -141,7 +142,7 @@ class _CategoryArticlesState extends State<CategoryArticles> {
                   ? Container(
                       alignment: Alignment.center,
                       height: 30,
-                      )
+                    )
                   : Container()
             ],
           );
@@ -154,7 +155,6 @@ class _CategoryArticlesState extends State<CategoryArticles> {
         return Container(
           alignment: Alignment.center,
           height: 400,
-          
         );
       },
     );

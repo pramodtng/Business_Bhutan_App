@@ -72,7 +72,7 @@ class _ArticlesState extends State<Articles> {
   Future<List<dynamic>> fetchFeaturedArticles(int page) async {
     try {
       var response = await http.get(Uri.parse(
-          "$WORDPRESS_URL/wp-json/wp/v2/posts/?categories[]=$FEATURED_ID&page=$page&per_page=10&_fields=id,date,title,content,custom,link"));
+          "$WORDPRESS_URL/wp-json/wp/v2/posts/?categories[]=13&page=$page&per_page=10&_fields=id,date,title,content,custom,link"));
 
       if (this.mounted) {
         if (response.statusCode == 200) {
@@ -112,16 +112,15 @@ class _ArticlesState extends State<Articles> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          // title: Image(
-          //   image: AssetImage('assets/icon.png'),
-          //   height: 45,
-          // ),
-          title: Text(
-            'Business Bhutan',
-            style: TextStyle(color: Colors.black),
+          title: Image.network(
+            'https://businessbhutan.bt/wp-content/uploads/2022/09/lo.png',
+            height: 40,
+            width: double.infinity,
+            // fit: BoxFit.cover,
+            alignment: Alignment.center,
           ),
           elevation: 5,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.yellow,
         ),
         body: Container(
           decoration: BoxDecoration(color: Colors.white70),
