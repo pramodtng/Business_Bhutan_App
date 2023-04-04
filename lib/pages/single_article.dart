@@ -218,7 +218,7 @@ class _SingleArticleState extends State<SingleArticle> {
                         child: HtmlWidget(
                           article.content,
                           webView: true,
-                          textStyle: Theme.of(context).textTheme.bodyText1 ?? TextStyle(),
+                          textStyle: Theme.of(context).textTheme.bodyLarge ?? TextStyle(),
                         ),
                       ),
                     ],

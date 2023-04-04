@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_wordpress_app">
    <application
-        android:label="Flutter for Wordpress"
+        android:label="News App"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

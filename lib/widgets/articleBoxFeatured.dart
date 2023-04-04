@@ -57,11 +57,11 @@ Widget articleBoxFeatured(
                                 : "<h2>" + article.title.toString() + "</h2>",
                             style: {
                               "h2": Style(
-                                  color: Theme.of(context).primaryColorDark,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: FontSize.em(1.05),
-                                  padding: EdgeInsets.all(2),
-                                  ),
+                                color: Theme.of(context).primaryColorDark,
+                                fontWeight: FontWeight.w500,
+                                fontSize: FontSize.em(1.05),
+                                padding: EdgeInsets.all(2),
+                              ),
                             }),
                       ),
                       Container(
@@ -98,7 +98,8 @@ Widget articleBoxFeatured(
                                   ),
                                   Text(
                                     article.date.toString(),
-                                    style: Theme.of(context).textTheme.caption,
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
                                   ),
                                 ],
                               ),

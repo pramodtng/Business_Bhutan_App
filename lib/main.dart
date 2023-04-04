@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
         primaryColorLight: Colors.white,
         primaryColorDark: Colors.black,
         textTheme: TextTheme(
-            headline1: TextStyle(
+            displayLarge: TextStyle(
               fontSize: 17,
               color: Colors.black,
               height: 1.2,
               fontWeight: FontWeight.w500,
               fontFamily: "Soleil",
             ),
-            caption: TextStyle(color: Colors.black45, fontSize: 10),
-            bodyText1: TextStyle(
+            bodySmall: TextStyle(color: Colors.black45, fontSize: 10),
+            bodyLarge: TextStyle(
                 fontSize: 16,
                 height: 1.5,
                 color: Colors.black87,

@@ -74,7 +74,7 @@ Widget articleBox(BuildContext context, Article article, String heroId) {
                                     Text(
                                       article.date.toString(),
                                       style:
-                                          Theme.of(context).textTheme.caption,
+                                          Theme.of(context).textTheme.bodySmall,
                                     ),
                                   ],
                                 ),
