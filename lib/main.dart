@@ -4,6 +4,7 @@ import 'package:flutter_wordpress_app/pages/articles.dart';
 import 'package:flutter_wordpress_app/pages/local_articles.dart';
 import 'package:flutter_wordpress_app/pages/search.dart';
 import 'package:flutter_wordpress_app/pages/settings.dart';
+import 'package:flutter_wordpress_app/pages/splashscreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black87,
                 fontWeight: FontWeight.normal)),
       ),
-      home: MyHomePage(),
+      home: SplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }

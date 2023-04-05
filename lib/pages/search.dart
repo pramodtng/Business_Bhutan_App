@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/models/Article.dart';
 import 'package:flutter_wordpress_app/pages/single_article.dart';
@@ -44,8 +45,8 @@ class _SearchState extends State<Search> {
         return searchedArticles;
       }
 
-      var response = await http.get(
-          Uri.parse("$WORDPRESS_URL/wp-json/wp/v2/posts?search=$searchText&page=$page&per_page=10&_fields=id,date,title,content,custom,link"));
+      var response = await http.get(Uri.parse(
+          "$WORDPRESS_URL/wp-json/wp/v2/posts?search=$searchText&page=$page&per_page=10&_fields=id,date,title,content,custom,link"));
 
       if (this.mounted) {
         if (response.statusCode == 200) {
@@ -111,6 +112,78 @@ class _SearchState extends State<Search> {
                 fontFamily: 'Poppins')),
         elevation: 5,
         backgroundColor: Colors.white,
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  const SizedBox(height: 40),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.home,
+                    ),
+                    title: const Text('Home'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.settings,
+                    ),
+                    title: const Text('Setting'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.info,
+                    ),
+                    title: const Text('About Us'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  SizedBox(
+                      child: Icon(
+                    Icons.facebook,
+                    color: Colors.blue,
+                  )),
+                  SizedBox(
+                    child: Icon(
+                      FeatherIcons.twitter,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(
+                      child: Icon(
+                    FeatherIcons.youtube,
+                    color: Colors.blue,
+                  )),
+                  SizedBox(
+                    child: Icon(
+                      FeatherIcons.instagram,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       body: Container(
         child: SingleChildScrollView(
@@ -197,7 +270,7 @@ class _SearchState extends State<Search> {
                   ? Container(
                       alignment: Alignment.center,
                       height: 30,
-                          )
+                    )
                   : Container()
             ],
           );
@@ -226,11 +299,7 @@ class _SearchState extends State<Search> {
             ),
           );
         }
-        return Container(
-            alignment: Alignment.center,
-            width: 300,
-            height: 150
-            );
+        return Container(alignment: Alignment.center, width: 300, height: 150);
       },
     );
   }

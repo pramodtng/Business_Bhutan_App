@@ -218,7 +218,8 @@ class _SingleArticleState extends State<SingleArticle> {
                         child: HtmlWidget(
                           article.content,
                           webView: true,
-                          textStyle: Theme.of(context).textTheme.bodyLarge ?? TextStyle(),
+                          textStyle: Theme.of(context).textTheme.bodyLarge ??
+                              TextStyle(),
                         ),
                       ),
                     ],
@@ -324,8 +325,7 @@ class _SingleArticleState extends State<SingleArticle> {
         return Container(
             alignment: Alignment.center,
             width: MediaQuery.of(context).size.width,
-            height: 150
-            );
+            height: 150);
       },
     );
   }

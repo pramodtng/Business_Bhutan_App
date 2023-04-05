@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/models/Article.dart';
 import 'package:flutter_wordpress_app/pages/single_Article.dart';
@@ -121,6 +122,78 @@ class _ArticlesState extends State<Articles> {
           ),
           elevation: 5,
           backgroundColor: Colors.yellow,
+        ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    const SizedBox(height: 40),
+                    ListTile(
+                      leading: const Icon(
+                        Icons.home,
+                      ),
+                      title: const Text('Home'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(
+                        Icons.settings,
+                      ),
+                      title: const Text('Setting'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(
+                        Icons.info,
+                      ),
+                      title: const Text('About Us'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    SizedBox(
+                        child: Icon(
+                      Icons.facebook,
+                      color: Colors.blue,
+                    )),
+                    SizedBox(
+                      child: Icon(
+                        FeatherIcons.twitter,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    SizedBox(
+                        child: Icon(
+                      FeatherIcons.youtube,
+                      color: Colors.blue,
+                    )),
+                    SizedBox(
+                      child: Icon(
+                        FeatherIcons.instagram,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
         body: Container(
           decoration: BoxDecoration(color: Colors.white70),
